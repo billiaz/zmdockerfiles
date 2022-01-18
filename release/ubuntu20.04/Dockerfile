@@ -17,7 +17,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABE4C7F993453843F0A
 # Install zoneminder
 RUN DEBIAN_FRONTEND=noninteractive apt install --assume-yes zoneminder \
     && a2enconf zoneminder \
-    && a2enmod rewrite cgi
+    && a2enmod rewrite cgi \
     && chown www-data. -R /usr/share/zoneminder/www
 
 RUN ln -sf /usr/share/zoneminder/www/fonts /usr/share/zoneminder/www/skins/classic/css/fonts
