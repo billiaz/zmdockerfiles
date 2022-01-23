@@ -21,8 +21,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt install --assume-yes zoneminder \
     && chown www-data. -R /usr/share/zoneminder/www
 
 RUN ln -sf /usr/share/zoneminder/www/fonts /usr/share/zoneminder/www/skins/classic/css/fonts
-# Setup Volumes
-VOLUME /var/cache/zoneminder/events /var/cache/zoneminder/images /var/lib/mysql /var/log/zm
 
 # Expose http port
 EXPOSE 80
